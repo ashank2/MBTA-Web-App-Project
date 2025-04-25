@@ -1,17 +1,8 @@
 # MBTA-Web-App-Project
-This is the base repository for Web App project. Please read the [instructions](instructions.md) for details.
+This is the base repository for our Web App project. 
 
 ## Project Writeup and Reflection:
 Team Members: Aryan Shanker and Joshua Bell. 
-
-## Project Overview
-Writing
-
-# MBTA Web App Project
-
-**Team Members:**  
-- Joshua Bell  
-- Aryan Shanker
 
 ---
 
@@ -24,13 +15,14 @@ Our MBTA Web App allows users to enter a location (e.g., "Fenway Park") and rece
 ## 2. Reflection
 
 **Development Process**  
-We divided the work by function. Aryan focused on the backend logic in `mbta_helper.py`, which included working with the Mapbox Geocoding API to convert place names to coordinates, and using the MBTA Realtime API to retrieve the nearest transit stop. I (Joshua) handled the Flask web application (Part 2), setting up routing, rendering templates, and processing form data submitted by users. One of the biggest challenges was aligning the inputs and outputs of the backend functions with the frontend expectations, particularly in ensuring error handling worked smoothly when users entered invalid locations. Once routing and template logic were in place, the app started working as expected.
+We divided the work by function. Aryan focused on Part 1: Geocoding & Harnessing Web APIs to: access web data programmatically, take an address or place name and return a properly encoded URL to make a Mapbox geocoding request, get the latitude and longitude of inputted locations and return the name of the closest MBTA stop with its wheelchair accesibility status. Aryan developed the fully functioning backend, utilizing Mapbox and MBTA APIs, writing all functions, and combining them in `mbta_helper.py`, which allowed for a seamless transition to front end app development. Joshua handled the Flask web application Part 2, setting up routing, rendering templates, and processing form data submitted by users. By doing so, Joshua was able to connect the back end (mbta_helper.py) with an effective and efficient front end design - successfully utilizing Flask, for users to use in real time - bringing the app together, making it one, effective and cohesive application for use. 
+One of the biggest challenges was aligning the inputs and outputs of the backend functions with the frontend expectations, particularly in ensuring error handling worked smoothly when users entered invalid locations. Once routing and template logic were in place, the app started working as expected. We did look at incorporating more APIs besides Mapbox and MBTA, such as: OpenWeatherMap API and Ticketmaster API whilst leveraging MBTA Realtime Arrival Data to suggest the optimal station for users to walk to. However, when adding them to our code, we ran into issues, and therefore, aimed to focus on emphasizing simplicity with an intuitive user interface. 
 
 **Team Collaboration**  
 Our team collaboration was smooth. We each worked on separate files and integrated our code once both parts were functional. GitHub made version control and syncing easier, and we communicated clearly about function interfaces so we could build independently but align at the integration phase. While our individual contributions were separate, we reviewed each other’s work to ensure the whole project ran seamlessly. If we did the project again, we would have scheduled a mid-way sync meeting to test integration earlier and troubleshoot any mismatches sooner.
 
 **Learning Experience & AI Tools**  
-I (Joshua) learned a lot about how web forms work, how POST requests are handled in Flask, and how to route users to new views with dynamic content. Aryan gained experience working with web APIs and handling structured JSON data in Python. We both benefited from using AI tools like ChatGPT to help write and debug Python and HTML code, troubleshoot API issues, and clarify Flask's routing behavior. AI tools made it easier to move quickly and debug without getting stuck. If we had known earlier how useful tools like Flask’s debug mode and `pprint` are, we could have saved time during testing. Overall, we’re leaving this project with stronger backend + frontend dev skills and the confidence to build future apps from scratch.
+Joshua learned a lot about how web forms work, how POST requests are handled in Flask, and how to route users to new views with dynamic content. Aryan learnt a lot from working with differing APIs and utilizing them to solve real world problems, whilst gaining experience handling structured JSON data in Python. We both benefited from using AI tools such as ChatGPT to help write and debug Python and HTML code, troubleshoot API issues, and clarify Flask's routing behavior. AI tools made it easier to move quickly and debug without getting stuck. If we had known earlier how useful tools like Flask’s debug mode and `pprint` are, we could have saved time during testing. Overall, we’re leaving this project with stronger backend + frontend dev skills and the confidence to build future apps from scratch.
 
 ---
 
