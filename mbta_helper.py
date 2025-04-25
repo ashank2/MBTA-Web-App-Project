@@ -17,8 +17,8 @@ load_dotenv()
 MAPBOX_TOKEN = os.getenv("MAPBOX_TOKEN")
 MBTA_API_KEY = os.getenv("MBTA_API_KEY")
 
-# print("MAPBOX_TOKEN", MAPBOX_TOKEN)
-# print("MBTA_API_KEY", MBTA_API_KEY)
+# print("MAPBOX_TOKEN", MAPBOX_TOKEN) --> For debugging purposes.
+# print("MBTA_API_KEY", MBTA_API_KEY) --> For debugging purposes.
 
 # Useful base URLs (you need to add the appropriate parameters for each API request)
 MAPBOX_BASE_URL = "https://api.mapbox.com/geocoding/v5/mapbox.places"
@@ -35,7 +35,7 @@ def get_json(url: str) -> dict:
     Both get_lat_lng() and get_nearest_station() might need to use this function.
     """
     with urllib.request.urlopen(url) as response:
-    # Opens the URL and assignts the response as 'response'.
+    # Opens the URL and assigns the response as 'response'.
         return json.load(response)
     # Returns the JSON data from the response, and delivers the output into a Python dictionary. 
 
@@ -50,6 +50,7 @@ def get_lat_lng(place_name: str) -> tuple[str, str]:
     url = f"{MAPBOX_BASE_URL}/{encoded_place}.json?access_token={MAPBOX_TOKEN}"
     # Creates the Mapbox API URL, taking the place (location) that is now encoded successfully, and the Mapbox API token. 
     
+    # In Lines 54, 56 and 58 - 61: AI was used for debugging purposes. 
     data = get_json(url)
 
     print("Mapbox response:", data)
@@ -73,6 +74,7 @@ def get_nearest_station(latitude: str, longitude: str) -> tuple[str, bool]:
     See https://api-v3.mbta.com/docs/swagger/index.html#/Stop/ApiWeb_StopController_index for URL formatting requirements for the 'GET /stops' API.
     """
     url = f"{MBTA_BASE_URL}?api_key={MBTA_API_KEY}&filter[latitude]={latitude}&filter[longitude]={longitude}&sort=distance"
+    # Used AI for correcting the url link structure in the above line - line 76. 
     # Creates the MBTA API URL, taking the latitude and longitude and the MBTA API key,
     # whilst sorting results by distance.
 
@@ -181,6 +183,7 @@ def build_mapbox_geocoding_url(place_name, mapbox_token):
     url = (f"https://api.mapbox.com/geocoding/v5/mapbox.places/"
            f"{encoded_place}.json?access_token={mapbox_token}&types=poi"
     )
+    # Used AI for correcting the url link structure in the above line - line 183. 
 
     return url 
     # Return the created URL as a string. 
@@ -211,6 +214,8 @@ def get_nearest_station(latitude: str, longitude: str) -> tuple[str, bool]:
         f"{MBTA_BASE_URL}?api_key={MBTA_API_KEY}"
         f"&filter[latitude]={latitude}&filter[longitude]={longitude}&sort=distance"
     )
+    # Used AI for correcting the url link structure in the above line - line 213. 
+
 
     # Example URL For Boston Common:
     # https://api-v3.mbta.com/stops?api_key=YOUR_KEY&filter[latitude]=42.3550&filter[longitude]=-71.0656&sort=distance
