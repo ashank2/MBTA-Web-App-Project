@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hi</title>
-  </head>
-
-  <body>
-    <h1>Hi</h1>
-    <p>This is an amazing app to help you find the nearest MBTA station</p>
-  </body>
+<html>
+<head>
+    <title>Find Your MBTA Stop</title>
+</head>
+<body>
+    <h1>MBTA Stop Finder</h1>
+    <form action="/nearest_mbta" method="POST">
+        <label for="place_name">Enter a location:</label>
+        <input type="text" id="place_name" name="place_name" required>
+        <button type="submit">Find Nearest MBTA Stop</button>
+    </form>
+</body>
 </html>
