@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Get API keys from environment variables:
-MAPBOX_TOKEN = os.getenv("MAPBOX_TOKEN")
+MAPBOX_TOKN = os.getenv("MAPBOX_TOKEN")
 MBTA_API_KEY = os.getenv("MBTA_API_KEY")
 
 # print("MAPBOX_TOKEN", MAPBOX_TOKEN) --> For debugging purposes.
@@ -277,7 +277,7 @@ def main():
     """
     You should test all the above functions here.
     """
-    place = "Boston Common" # Inputting a place name for test. 
+    place = "Wellesley" # Inputting a place name for test. 
     station, accessible = find_stop_near(place) # Calls find_stop_near() function to get nearest station and wheelchair accessibility. 
     print(f"Nearest MBTA Station to {place}: {station}") # Prints the nearest station's name.
     print(f"Wheelchair accessible: {'Yes' if accessible else 'No'}") # Prints if the station is or is not wheelchair accessible.
